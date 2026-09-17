@@ -1,0 +1,144 @@
+version: 1
+document_id: vendor_manual_004
+reviewed_at: "2026-09-16"
+
+source_artifact:
+  callout_evidence: data/outputs/vendor_manual_004_intake_test/equipment_name_evidence_callouts.csv
+
+decisions:
+  "861-ACS-101":
+    decision: accept_equipment_name
+    equipment_name: "Active Shelter SH 7030"
+    confidence: high
+    evidence_pages:
+      - 7
+      - 8
+    accepted_evidence:
+      - "ACTIVE SHELTER SH 7030 TAG: 861-ACS-101"
+      - "GENERAL LAYOUT ACTIVE SHELTER SH 7030 TAG: 861-ACS-101"
+      - "INTERNAL VIEWS ACTIVE SHELTER SH 7030 TAG: 861-ACS-101"
+    rejected_as_name:
+      - "ACTIVE SH 7030"
+    reason: >-
+      Multiple explicit drawing callouts link the tag to an active shelter
+      identified as SH 7030. The longer wording is preferred over the
+      shorthand form.
+
+  "863-ACS-101":
+    decision: accept_equipment_name
+    equipment_name: "Active Shelter SH 12030"
+    confidence: high
+    evidence_pages:
+      - 7
+      - 8
+      - 130
+    accepted_evidence:
+      - "ACTIVE SHELTER SH 12030 TAG: 863-ACS-101"
+      - "GENERAL LAYOUT ACTIVE SHELTER SH 12030 TAG: 863-ACS-101"
+      - "INTERNAL VIEWS ACTIVE SHELTER SH 12030 TAG: 863-ACS-101"
+    rejected_as_name:
+      - "ACTIVE SH 12030"
+    reason: >-
+      Multiple explicit drawing callouts link the tag to an active shelter
+      identified as SH 12030. The longer wording is preferred over the
+      shorthand form.
+
+  "514-PCS-1001":
+    decision: accept_equipment_name
+    equipment_name: "Passive Cooled Shelter"
+    confidence: high
+    evidence_pages:
+      - 7
+    accepted_evidence:
+      - "INTERNAL VIEWS PASSIVE COOLED SHELTER TAG: 514-PCS-1001"
+      - "PASSIVE COOLED SHELTER TAG: 514-PCS-1001"
+    rejected_as_name:
+      - "SV1 Al-Ain Branch Cement Factory"
+    reason: >-
+      Explicit drawing callouts identify the tagged item as a Passive Cooled
+      Shelter. The SV1 text is project or site context and is not an
+      equipment name.
+
+  "512-PCS-201":
+    decision: accept_equipment_name
+    equipment_name: "Passive Cooled Shelter"
+    confidence: high
+    evidence_pages:
+      - 7
+    accepted_evidence:
+      - "INTERNAL VIEWS PASSIVE COOLED SHELTER TAG: 512-PCS-201"
+      - "PASSIVE COOLED SHELTER TAG: 512-PCS-201"
+    rejected_as_name:
+      - "SV2 Maqta Taweelah Pipeline"
+    reason: >-
+      Explicit drawing callouts identify the tagged item as a Passive Cooled
+      Shelter. The SV2 text is project or site context and is not an
+      equipment name.
+
+  "514-PCS-101":
+    decision: accept_equipment_name
+    equipment_name: "Passive PSH 4500SM-275W"
+    confidence: medium
+    evidence_pages:
+      - 7
+    accepted_evidence:
+      - "TAG NOS PASSIVE PSH 4500SM-275W: 514-PCS-101, 514-PCS-201"
+    reason: >-
+      The source explicitly links this shared equipment description to both
+      listed tags. It is accepted as a shared descriptive name, with medium
+      confidence because the callout names two tags together.
+
+  "514-PCS-201":
+    decision: accept_equipment_name
+    equipment_name: "Passive PSH 4500SM-275W"
+    confidence: medium
+    evidence_pages:
+      - 7
+    accepted_evidence:
+      - "TAG NOS PASSIVE PSH 4500SM-275W: 514-PCS-101, 514-PCS-201"
+    reason: >-
+      The source explicitly links this shared equipment description to both
+      listed tags. It is accepted as a shared descriptive name, with medium
+      confidence because the callout names two tags together.
+
+  "514-PCS-301":
+    decision: no_name_evidence_found
+    confidence: low
+    evidence_pages:
+      - 7
+      - 8
+      - 154
+    reason: >-
+      No explicit descriptive callout naming this admitted tag was recovered
+      from the current dense-OCR evidence.
+
+  "514-PCS-401":
+    decision: no_name_evidence_found
+    confidence: low
+    evidence_pages:
+      - 7
+      - 8
+    reason: >-
+      No explicit descriptive callout naming this admitted tag was recovered
+      from the current dense-OCR evidence. Do not confuse it with the
+      unresolved candidate tag 515-PCS-401.
+
+  "514-PCS-501":
+    decision: no_name_evidence_found
+    confidence: low
+    evidence_pages:
+      - 7
+    reason: >-
+      No explicit descriptive callout naming this admitted tag was recovered
+      from the current dense-OCR evidence. Do not confuse it with the
+      unresolved candidate tag 515-PCS-501.
+
+  "514-PCS-514":
+    decision: no_name_evidence_found
+    confidence: low
+    evidence_pages:
+      - 7
+      - 154
+    reason: >-
+      No explicit descriptive callout naming this admitted tag was recovered
+      from the current dense-OCR evidence.

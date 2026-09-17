@@ -1,0 +1,80 @@
+version: 1
+document_id: vendor_manual_004
+source_pdf: data/raw/vendor_manual_004.pdf
+review_scope: intake_supplemental_review_batch_001
+reviewed_at: '2026-09-15'
+notes:
+- These overrides are reviewed routing annotations only.
+- They do not alter tag_page_selection/selected_pages.txt.
+- They do not alter batches/tag_pages_batch_001.csv.
+- They are not automatically consumed by the current pipeline.
+overrides:
+  4:
+    selected_class: index
+    recommended_route: native_text_plus_visual_check
+    priority: low
+    action: retain_as_document_navigation
+    reason: Document register/index entry referencing a spare-parts and interchangeability
+      record. It is not the underlying spare-parts list.
+  35:
+    selected_class: product_specification
+    recommended_route: table_extraction
+    priority: medium
+    action: optional_product_table_extraction
+    reason: Disano 921 Hydro T8 EL product specification. Contains a compact product-variant
+      table (code, packing, gear, weight, wattage, base, colour, dimensions) and a conformity
+      mention; it is not a standalone certificate record.
+  61:
+    selected_class: product_specification
+    recommended_route: table_extraction
+    priority: medium
+    action: optional_product_table_and_compliance_capture
+    reason: EVFT explosion-proof fluorescent-lighting specification. Contains ATEX conformity
+      evidence and product-variant/specification table content; it is not a standalone certificate
+      record.
+  64:
+    selected_class: product_specification
+    recommended_route: table_extraction
+    priority: medium
+    action: optional_product_table_and_compliance_capture
+    reason: EFSCO push-button and signal-light specification. Contains ATEX conformity evidence
+      and a code/contact table; it is not a standalone certificate record.
+  65:
+    selected_class: duplicate_of_page_064
+    recommended_route: manual_review
+    priority: low
+    action: exclude_from_auxiliary_processing
+    reason: 'Visual side-by-side comparison confirms page 065 is effectively a duplicate of
+      page 064: same AD Viganò EFSCO product sheet, ATEX conformity statement, drawings, dimensions,
+      and code/contact table. The thumbnail comparison found 0.5317% changed pixels, restricted
+      to a narrow footer-level region, consistent with rendering/scan variation rather than
+      distinct technical content.'
+  138:
+    selected_class: test_procedure
+    recommended_route: native_text_plus_visual_check
+    priority: medium
+    action: retain_test_method_and_calibration_reference
+    reason: Passive cooling shelter thermal-test procedure. It references verification of
+      calibration certificates but is not itself a calibration certificate. Retain procedure
+      values, temperature cycle, and test method as needed.
+  139:
+    selected_class: test_procedure
+    recommended_route: native_text_plus_visual_check
+    priority: medium
+    action: retain_acceptance_criteria
+    reason: Continuation of the passive cooling shelter thermal-test procedure. Contains acceptance
+      criteria and conclusion text, not a completed inspection-report table.
+  141:
+    selected_class: test_procedure
+    recommended_route: native_text_plus_visual_check
+    priority: medium
+    action: retain_document_control_and_references
+    reason: Hydrostatic test document revision history and references. It cites an inspection
+      and test plan but is not itself that plan or a table target.
+  142:
+    selected_class: test_procedure
+    recommended_route: native_text_plus_visual_check
+    priority: medium
+    action: retain_tank_data_and_acceptance_criteria
+    reason: Hydrostatic test procedure containing tank capacity, material, filling method,
+      and water-leakage acceptance criteria; it is not an inspection report table.

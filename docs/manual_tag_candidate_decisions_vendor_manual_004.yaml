@@ -1,0 +1,94 @@
+version: 1
+document_id: vendor_manual_004
+reviewed_at: "2026-09-16"
+
+source_artifacts:
+  equipment_register: data/outputs/vendor_manual_004_intake_test/equipment_centric/equipment_register.xlsx
+  candidate_review_queue: data/outputs/vendor_manual_004_intake_test/review_queue/review_queue_tag_candidates.csv
+  candidate_inventory: data/outputs/vendor_manual_004_intake_test/equipment_centric/tag_candidates.csv
+  source_ocr_directory: data/outputs/vendor_manual_004_intake_test/universal_table_pipeline_tags/tag_pages_batch_001/image_ocr/detected_tables
+
+notes:
+  - "This file records human review decisions only."
+  - "It does not automatically change selected_pages.txt, tag_pages_batch_001.csv, or generated equipment outputs."
+  - "Admit/reject decisions should be applied through a separate controlled export or manual-correction step."
+  - "Candidate strings can be high-confidence OCR reads while still being truncated or cross-boundary text artifacts."
+
+decisions:
+  "861-ACS-10":
+    decision: reject_as_truncated_alias
+    canonical_tag: "861-ACS-101"
+    confidence: high
+    source_pages:
+      - 7
+    reason: >-
+      Candidate appears in explicit TAG context on page 7 as
+      "TAG: 861-ACS-10, 863-ACS-101". The candidate is a likely clipped OCR
+      rendering of the already admitted canonical tag 861-ACS-101, not a
+      separate asset.
+
+  "863-ACS-10":
+    decision: reject_as_truncated_alias
+    canonical_tag: "863-ACS-101"
+    confidence: high
+    source_pages:
+      - 131
+    reason: >-
+      Candidate appears in explicit TAG NO. context on page 131 as
+      "TAG NO.: 863-ACS-10". It is a likely clipped OCR rendering of the
+      already admitted canonical tag 863-ACS-101, which appears across
+      multiple linked source pages.
+
+  "515-PCS-401":
+    decision: review_for_admission
+    confidence: medium
+    source_pages:
+      - 7
+      - 8
+      - 147
+      - 154
+      - 159
+      - 160
+      - 162
+    reason: >-
+      Repeated across seven source pages and observed in the paired source
+      form "515-PCS-401/515-PCS-501". It may represent a real additional
+      equipment tag, but needs a visually confirmed isolated tag label and
+      equipment context before asset admission.
+
+  "515-PCS-501":
+    decision: review_for_admission
+    confidence: medium
+    source_pages:
+      - 7
+      - 8
+      - 147
+      - 154
+      - 159
+      - 160
+      - 162
+    reason: >-
+      Repeated across seven source pages and observed in the paired source
+      form "515-PCS-401/515-PCS-501". It may represent a real additional
+      equipment tag, but needs a visually confirmed isolated tag label and
+      equipment context before asset admission.
+
+  "514-PCS-515":
+    decision: reject_as_merged_ocr_artifact
+    confidence: high
+    source_pages:
+      - 7
+    reason: >-
+      Likely cross-boundary OCR artifact caused by adjacent identifiers in
+      the source text: "514-PCS-501 / 515-PCS-401 / 515-PCS-501".
+      It does not have independent isolated identifier evidence.
+
+  "515-PCS-515":
+    decision: reject_as_merged_ocr_artifact
+    confidence: high
+    source_pages:
+      - 7
+    reason: >-
+      Likely cross-boundary OCR artifact caused by adjacent identifiers in
+      the source text: "515-PCS-401 / 515-PCS-501".
+      It does not have independent isolated identifier evidence.

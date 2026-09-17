@@ -1,0 +1,71 @@
+tag_patterns:
+  # Common standalone ISA-like P&ID tags:
+  # FT-30, PV-9, PSHH-101, FIC-1201, ESDV-200
+  isa_instrument_tag:
+    regex: >-
+      (?<![A-Z0-9])
+      (?:A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z)
+      (?:[A-Z]{1,5})
+      \s*[-–—]?\s*
+      \d{1,6}
+      (?:[A-Z]{1,3})?
+      (?![A-Z0-9])
+
+  # Project/plant-prefixed instrument tags:
+  # 5201PSL0111, 5301PSH0111, 5001PSHH0111, 3656FT30
+  compact_prefixed_instrument_tag:
+    regex: >-
+      (?<![A-Z0-9])
+      \d{3,6}
+      \s*
+      (?:XV|HV|MOV|SDV|ESDV|PSV|PCV|FCV|LCV|TCV|
+         PT|PI|PC|PS|PSH|PSHH|PSL|PSLL|
+         TT|TI|TC|TS|TSH|TSHH|TSL|TSLL|
+         FT|FI|FC|FS|FSH|FSHH|FSL|FSLL|
+         LT|LI|LC|LS|LSH|LSHH|LSL|LSLL|
+         AT|AI|AC|AS|ZT|ZI|ZC|ZS|YT|YI|YC|YS|
+         TE|FE|PE|LE|AE|VE|WE)
+      \s*
+      \d{2,6}
+      (?:[A-Z]{1,3})?
+      (?![A-Z0-9])
+
+  # Less specific fallback for unusual project conventions.
+  # Do NOT auto-select on this alone; use only with Tag-column / certificate context.
+  broad_compact_tag_candidate:
+    regex: >-
+      (?<![A-Z0-9])
+      \d{3,6}
+      \s*
+      [A-Z]{2,6}
+      \s*
+      \d{2,6}
+      (?:[A-Z]{1,3})?
+      (?![A-Z0-9])
+
+  # Typical vendor equipment IDs, model/serial/reference values.
+  # Retain for extraction, but they must not select a page alone.
+  serial_tag_identifier:
+    regex: '(?<!\d)\d{4,6}\s*[-–—]\s*\d{1,4}(?!\d)'
+
+  serial_number:
+    regex: '(?i)\b(?:serial|ser\.?\s*no\.?)\s*[:#]?\s*\d{4,10}\b'
+
+page_context_patterns:
+  # These should strongly promote a page even if OCR splits the actual tag.
+  tag_field:
+    regex: '(?i)\btag\s*[:#]?\b'
+
+  serial_and_tag_field:
+    regex: '(?i)\b(?:ser(?:ial)?\.?\s*no\.?|serial)\b.{0,80}\btag\b'
+
+  certificate_document:
+    regex: >-
+      (?i)\b(?:final\s+test\s+certificate|declaration\s+of\s+conformity|
+      calibration\s+certificate|test\s+certificate|inspection\s+certificate)\b
+
+  instrument_context:
+    regex: >-
+      (?i)\b(?:instrument(?:s)?|switch(?:es)?|set\s*point|
+      pressure|process\s+connection|range|proof\s+pressure|
+      test\s+gauge|model|samples?)\b

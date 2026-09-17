@@ -1,0 +1,27 @@
+{
+  "document_id": "vendor_manual_001",
+  "layout": "pressure_gauge_15_column_rising_falling_v1",
+  "setpoints": [0, 20, 40, 60, 80, 100],
+  "pages": {
+    "9": {
+      "expected_rows": 12,
+      "serial_prefix": "3656",
+      "status": "complete"
+    },
+    "10": {
+      "expected_rows": 12,
+      "serial_prefix": null,
+      "status": "pending"
+    },
+    "11": {
+      "expected_rows": 12,
+      "serial_prefix": null,
+      "status": "pending"
+    },
+    "12": {
+      "expected_rows": 12,
+      "serial_prefix": null,
+      "status": "pending"
+    }
+  }
+}

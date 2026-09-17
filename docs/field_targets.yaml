@@ -1,0 +1,26 @@
+document_fields:
+  - vendor
+  - document_number
+  - revision
+  - publication_date
+  - equipment_type
+  - product_family
+  - model_number
+
+equipment_fields:
+  - equipment_tag
+  - manufacturer
+  - model_number
+  - design_pressure
+  - operating_temperature
+  - material
+  - connection_size
+  - flow_rate
+
+required_evidence:
+  - document_id
+  - page
+  - bbox
+  - raw_value
+  - extraction_method
+  - confidence

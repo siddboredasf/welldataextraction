@@ -1,0 +1,24 @@
+{
+  "identity_fields": [
+    "serial_number"
+  ],
+  "risk_fields": [
+    "order_acceptance_number"
+  ],
+  "tier_rank": {
+    "tier_1_direct_tag_row": 4,
+    "tier_1_direct_or_linked_row": 4,
+    "tier_1_dense_record_evidence": 4,
+    "tier_2_local_shared_block_evidence": 2,
+    "tier_3_shared_page_table_evidence": 1
+  },
+  "auto_accept": {
+    "max_candidate_values": 1,
+    "minimum_tier_rank": 4,
+    "minimum_confidence": 0.95
+  },
+  "priority_thresholds": {
+    "high": 70,
+    "medium": 40
+  }
+}

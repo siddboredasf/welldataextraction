@@ -1,23 +1,52 @@
+# Python virtual environments and bytecode
 .venv/
+venv/
+env/
 __pycache__/
+*.py[cod]
+*.pyo
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# macOS, editors, and temporary files
 .DS_Store
-.env
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*.bak
 
+# Raw source documents and generated pipeline outputs
 data/raw/
-data/rendered/
-data/processed/
-data/annotations/
 data/outputs/
+outputs/
+backups/
 
-*.pdf
-*.png
-*.jpg
-*.jpeg
-*.tif
-*.tiff
-*.xlsx
-*.csv
+# Common local scratch locations
+tmp/
+temp/
+
+# Local run logs
+*.log
+
+# OCR/rendering artifacts when created outside data/outputs/
+rendered_pages/
+image_ocr/
+detected_tables/
+review_crops/
+
+# Local document inputs, review material, rendered pages, and deliverables
+data/deliverables/
+data/exports/
+data/rendered/
+data/review/
+
+# Local document inputs, reviewer material, renderings, and generated deliverables
+data/deliverables/
+data/exports/
+data/rendered/
+data/review/

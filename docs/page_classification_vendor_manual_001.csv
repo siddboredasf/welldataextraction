@@ -1,0 +1,12 @@
+page,document_type,document_role,asset_record_creation,extraction_strategy,review_status,notes
+9,calibration_report,calibration_evidence,true,calibration_table_extractor,classified,"Serial/tag calibration reading table."
+10,calibration_report,calibration_evidence,true,calibration_table_extractor,classified,"Serial/tag calibration reading table."
+11,calibration_report,calibration_evidence,true,calibration_table_extractor,classified,"Serial/tag calibration reading table."
+12,calibration_report,calibration_evidence,true,calibration_table_extractor,classified,"Serial/tag calibration reading table."
+31,instruction_manual_diagram,vendor_installation_guidance,false,manual_metadata_legend_extractor,classified,"Connection/mounting diagrams and component legend; no asset instance should be created from this page alone."
+69,vendor_specification,material_test_report,true,material_certificate_extractor,classified,"Rodacciai material test report; extract heat number, grade, chemistry, mechanical properties, dimensions, customer/order."
+74,final_test_certificate,test_certificate,true,certificate_table_extractor,classified,"Final test certificate; extract instrument samples, serials, tags, models, ranges, set points, and test gauge values."
+76,vendor_specification,product_conformity_certificate,false,conformity_certificate_extractor,classified,"CESI conformity certificate for pressure-switch MA series and thermal-switch TAH series; extract certificate ID, standards, Ex marking, and product-series scope."
+79,vendor_specification,material_test_report,true,material_certificate_extractor,classified,"Rodacciai material test report; extract heat number, grade, chemistry, mechanical properties, dimensions, customer/order."
+84,final_test_certificate,test_certificate,true,certificate_table_extractor,classified,"Final test certificate; extract instrument samples, serials, tags, models, ranges, set points, and test gauge values."
+91,final_test_certificate,test_certificate,true,certificate_table_extractor,classified,"Final test certificate; extract instrument samples, serials, tags, models, ranges, set points, and test gauge values."

@@ -1,0 +1,27 @@
+{
+  "identity_fields": [
+    "equipment_tag",
+    "serial_number"
+  ],
+  "risk_fields": [
+    "set_point",
+    "pressure",
+    "temperature",
+    "material",
+    "model"
+  ],
+  "tier_rank": {
+    "tier_1_direct_or_linked_row": 3,
+    "tier_1_direct_tag_row": 2,
+    "tier_2_shared_page_block": 1
+  },
+  "auto_accept": {
+    "max_candidate_values": 1,
+    "minimum_tier_rank": 2,
+    "minimum_confidence": 0.98
+  },
+  "priority_thresholds": {
+    "high": 70,
+    "medium": 40
+  }
+}

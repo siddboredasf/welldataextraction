@@ -1,4 +1,5 @@
 pymupdf
+pytesseract
 pillow
 opencv-python
 numpy

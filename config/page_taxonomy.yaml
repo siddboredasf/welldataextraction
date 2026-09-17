@@ -1,0 +1,196 @@
+version: 1
+
+classes:
+  index:
+    priority: high
+    route: native_text_plus_visual_check
+    keywords:
+      - approved index
+      - document index
+      - table of contents
+      - document register
+      - contents
+
+  equipment_metadata:
+    priority: high
+    route: native_text_plus_visual_check
+    keywords:
+      - equipment tag
+      - "equipment:"
+      - serial number
+      - serial no
+      - name plate
+      - nameplate
+      - manufacturer
+      - model number
+
+  inspection_plan:
+    priority: high
+    route: table_extraction
+    keywords:
+      - inspection test plan
+      - inspection and test plan
+      - inspection detail
+      - inspection legend
+      - hold point
+      - witness point
+      - review of document
+      - inspection activity
+
+  certificate:
+    priority: high
+    route: ocr_key_value
+    keywords:
+      - certificate of compliance
+      - certificate of conformity
+      - inspection release certificate
+      - calibration certificate
+      - test certificate
+      - declaration of conformity
+      - certificate number
+
+  non_conformance:
+    priority: high
+    route: native_text_plus_visual_check
+    keywords:
+      - non-conformance
+      - nonconformance
+      - non-conformity
+      - nonconformity
+      - waiver
+      - deviation
+      - punch list
+
+  material_traceability:
+    priority: high
+    route: table_extraction
+    keywords:
+      - material traceability
+      - material test certificate
+      - mill test certificate
+      - heat number
+      - heat no
+      - material certificate
+      - MTC
+
+  welding:
+    priority: medium
+    route: native_text_plus_visual_check
+    keywords:
+      - weld map
+      - weld summary
+      - welding procedure
+      - procedure qualification record
+      - welding procedure specification
+      - welder qualification
+      - welder performance
+      - WPS
+      - PQR
+
+  ndt:
+    priority: high
+    route: ocr_key_value
+    keywords:
+      - non-destructive testing
+      - nondestructive testing
+      - NDT report
+      - NDT procedure
+      - radiographic testing
+      - radiographic test
+      - ultrasonic testing
+      - magnetic particle
+      - liquid penetrant
+      - dye penetrant
+
+  inspection_report:
+    priority: high
+    route: table_extraction
+    keywords:
+      - visual inspection report
+      - dimensional inspection report
+      - inspection report
+      - inspection result
+      - acceptance criteria
+
+  pressure_test:
+    priority: high
+    route: ocr_key_value
+    keywords:
+      - hydro test
+      - hydrostatic test
+      - pneumatic test
+      - pressure test
+      - test pressure
+      - test duration
+      - pressure recorder
+
+  calibration:
+    priority: high
+    route: ocr_key_value
+    keywords:
+      - calibration certificate
+      - calibration report
+      - calibration date
+      - pressure gauge
+      - pressure recorder
+      - due date
+
+  drawing:
+    priority: medium
+    route: drawing_review
+    keywords:
+      - general arrangement
+      - as built drawing
+      - as-built drawing
+      - drawing number
+      - wiring diagram
+      - termination diagram
+      - pneumatic schematic
+      - hydraulic schematic
+      - schematic diagram
+
+  design_calculation:
+    priority: medium
+    route: native_text_plus_visual_check
+    keywords:
+      - design calculation
+      - design summary
+      - design pressure
+      - design temperature
+      - allowable pressure
+      - calculation sheet
+
+  coating:
+    priority: medium
+    route: ocr_key_value
+    keywords:
+      - coating report
+      - paint report
+      - coating inspection
+      - surface preparation
+      - dry film thickness
+      - DFT
+
+  spare_parts:
+    priority: high
+    route: table_extraction
+    keywords:
+      - spare parts
+      - spare parts list
+      - recommended spares
+      - spare parts list
+      - part number
+      - bill of materials
+      - interchangeability
+
+  operation_maintenance:
+    priority: medium
+    route: native_text_plus_visual_check
+    keywords:
+      - installation
+      - commissioning
+      - operation
+      - maintenance
+      - storage
+      - preservation
+      - packing procedure
